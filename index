@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>On‑The‑Fly Translator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #eef1f7;
+        color: #222;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        overflow-x: hidden;
+    }
+
+    /* ✈️ Airplane Animation */
+    .plane {
+        position: fixed;
+        top: 20px;
+        left: -200px;
+        width: 120px;
+        opacity: 0.9;
+        animation: fly 12s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes fly {
+        0% { transform: translateX(-200px); }
+        100% { transform: translateX(120vw); }
+    }
+
+    .container {
+        width: 100%;
+        max-width: 850px;
+        background: #fff;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        animation: fadeIn .5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 34px;
+        margin-bottom: 8px;
+        color: #2d4bff;
+        font-weight: 800;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #555;
+        font-size: 15px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 130px;
+        padding: 15px;
+        border-radius: 12px;
+        border: 2px solid #dce1f0;
+        font-size: 16px;
+        resize: none;
+        outline: none;
+        transition: .2s;
+        background: #fafbff;
+    }
+
+    textarea:focus {
+        border-color: #2d4bff;
+        box-shadow: 0 0 0 3px rgba(45,75,255,0.15);
+    }
+
+    .row {
+        display: flex;
+        gap: 15px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    select {
+        flex: 1;
+        min-width: 150px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 2px solid #dce1f0;
+        font-size: 16px;
+        outline: none;
+        background: #fafbff;
+        transition: .2s;
+    }
+
+    select:focus {
+        border-color: #2d4bff;
+        box-shadow: 0 0 0 3px rgba(45,75,255,0.15);
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #2d4bff;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: .2s;
+        font-weight: 600;
+    }
+
+    button:hover {
+        background: #1f36c9;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 20px;
+        background: #f0f2ff;
+        border-radius: 12px;
+        min-height: 90px;
+        white-space: pre-wrap;
+        font-size: 17px;
+        border: 2px solid #dce1f0;
+    }
+
+    #copy-btn {
+        margin-top: 12px;
+        padding: 10px 20px;
+        background: #111;
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- ✈️ Flying Plane -->
+
+
+<div class="container">
+    <h1>On‑The‑Fly Translator</h1>
+    <div class="subtitle">Fast • Free • Browser‑Only</div>
+
+    <textarea id="input" placeholder="Type text to translate..."></textarea>
+
+    <div class="row">
+        <select id="src"></select>
+        <select id="target"></select>
+    </div>
+
+    <button onclick="safeTranslate()">Translate</button>
+
+    <div id="output">Your translation will appear here...</div>
+    <button id="copy-btn" onclick="copyText()">Copy</button>
+</div>
+
+<script>
+/* Disable right-click */
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+/* Block inspect shortcuts */
+document.onkeydown = e => {
+    if (e.key === "F12") return false;
+    if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) return false;
+    if (e.ctrlKey && e.key === "U") return false;
+};
+
+/* Random Email */
+function randomEmail() {
+    const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+    const rand = Array.from({ length: 12 }, () =>
+        chars[Math.floor(Math.random() * chars.length)]
+    ).join("");
+    return `${rand}@auto-user.net`;
+}
+
+/* Safety Filter */
+function safetyScrub(text) {
+    return text;
+}
+
+/* Copy Output */
+function copyText() {
+    navigator.clipboard.writeText(document.getElementById("output").innerText);
+}
+
+/* Languages */
+const languages = {
+    en: "English", es: "Spanish", fr: "French", de: "German",
+    it: "Italian", pt: "Portuguese", ja: "Japanese", ko: "Korean",
+    hi: "Hindi", zh: "Chinese (Simplified)", ar: "Arabic",
+    ru: "Russian", nl: "Dutch", sv: "Swedish", no: "Norwegian",
+    fi: "Finnish", tr: "Turkish", pl: "Polish", cs: "Czech",
+    el: "Greek", he: "Hebrew", th: "Thai", vi: "Vietnamese",
+    id: "Indonesian"
+};
+
+/* Populate Menus */
+function populateLanguageMenus() {
+    const src = document.getElementById("src");
+    const target = document.getElementById("target");
+
+    for (const [code, name] of Object.entries(languages)) {
+        src.innerHTML += `<option value="${code}">${name}</option>`;
+        target.innerHTML += `<option value="${code}">${name}</option>`;
+    }
+
+    src.value = localStorage.getItem("srcLang") || "en";
+    target.value = localStorage.getItem("targetLang") || "es";
+
+    src.onchange = () => localStorage.setItem("srcLang", src.value);
+    target.onchange = () => localStorage.setItem("targetLang", target.value);
+}
+
+/* Translate */
+async function safeTranslate() {
+    const text = document.getElementById('input').value;
+    const src = document.getElementById('src').value;
+    const target = document.getElementById('target').value;
+    const outDiv = document.getElementById('output');
+    const copyBtn = document.getElementById('copy-btn');
+
+    if (!text.trim()) return;
+
+    outDiv.innerText = "Translating...";
+    copyBtn.style.display = "none";
+
+    try {
+        const email = randomEmail();
+
+        const url =
+            `https://api.mymemory.translated.net/get` +
+            `?q=${encodeURIComponent(text)}` +
+            `&langpair=${src}|${target}` +
+            `&de=${email}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        let translated = data.responseData.translatedText;
+        translated = safetyScrub(translated);
+
+        outDiv.innerText = translated;
+
+        if (translated.trim()) {
+            copyBtn.style.display = "inline-block";
+        }
+    } catch (e) {
+        outDiv.innerText = "Error: Service busy. Try again.";
+        copyBtn.style.display = "none";
+    }
+}
+
+/* Init */
+window.onload = populateLanguageMenus;
+</script>
+
+</body>
+</html>
